@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="./index.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav class="navigation">
+            <div class="navigation__inner">
+                <div class="navigation__logoAndSocials">
+                    <div class="navigation__logo">
+                        <h1>Logo</h1>
+                    </div>
+                    <ul class="navigation__socialsContainer">
+                        <li>
+                            <a href="#">
+                                <img src="./icons/spotify.svg" alt="">                          
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./icons/apple.svg" alt="">                          
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./icons/youtube.svg" alt="">                          
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./icons/instagram.svg" alt="">                          
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navigation__mobileContainer" data-mobile-menu="closed"> 
+                    <ul class="navigation__menuItems" data-is-open-on-mobile="false">
+                        <li>
+                            <a class="font-M" href="#">About</a>
+                        </li>
+                        <li>
+                            <a class="font-M" href="#">Music</a>
+                        </li>
+                        <li>
+                            <a class="font-M" href="#">Gigs</a>
+                        </li>
+                        <li>
+                            <a class="font-M" href="#">Media</a>
+                        </li>
+                        <li>
+                            <a class="font-M" href="#">Newsletter</a>
+                        </li>
+                        <li>
+                            <a class="font-M button button--primary button--white" href="#">Listen</a>
+                        </li>
+                        <li>
+                            <ul class="navigation__socialsContainer navigation__socialsContainer--mobile">
+                                <li>
+                                    <a href="#">
+                                        <img src="./icons/spotify.svg" alt="">                          
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="./icons/apple.svg" alt="">                          
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="./icons/youtube.svg" alt="">                          
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="./icons/instagram.svg" alt="">                          
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <button class="navigation__mobileToggle" data-mobile-toggle>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="navigation__mobileToggle__close">
+                        <path fill="currentColor" d="M12 10.586L7.707 6.293a1 1 0 00-1.414 1.414L10.586 12l-4.293 4.293a1 1 0 101.414 1.414L12 13.414l4.293 4.293a1 1 0 001.414-1.414L13.414 12l4.293-4.293a1 1 0 00-1.414-1.414L12 10.586z"/>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <section class="homeHero">
+        <div class="homeHero__textContent">
+            <h1 class="font-3XL">Change<span class="font-M">Out now on all streaming services</span></h1>
+
+            <a href="#" class="button button--primary font-M">
+                Listen now
+            </a>
+        </div>
+        <div class="homeHero__rightSide">
+            <div class="homeHero__imageContainer">
+                <img src="./images/home-hero.png" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="about">
+        <div class="about__title">
+            <h2 class="font-XL">About Us</h2>
+        </div>
+        <div class="about__content">
+            <p class="font-M">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. In tenetur sed commodi. Dignissimos inventore, est excepturi quas alias recusandae cum dolorum. 
+                <br>
+                <br>
+                Voluptatibus animi pariatur quaerat molestiae magni odio atque unde quisquam aperiam vel ratione velit impedit deserunt? Iusto ex alias rerum quam fuga dicta laudantium eveniet perferendis, tenetur delectus assumenda.
+            </p>
+        </div>
+    </section>
+    <section class="songs">
+        <div class="songs__container">
+            <h2 class="font-XL">Music</h2>
+            <div class="songs__songsContainer">
+                <a href="#" class="songs__card">
+                    <div class="songs__card__image">
+                        <img src="./images/albumart.jpg" alt="">
+                    </div>
+                    <div class="songs__card__content">
+                        <h3 class="font-L--bold italic">Song Title</h3>
+                    </div>
+                    <button href="#" class="button">
+                        Listen plz
+                    </button>
+                </a>
+                <a href="#" class="songs__card">
+                    <div class="songs__card__image">
+                        <img src="./images/albumart.jpg" alt="">
+                    </div>
+                    <div class="songs__card__content">
+                        <h3 class="font-L--bold italic">Song Title</h3>
+                    </div>
+                    <button href="#" class="button">
+                        Listen plz
+                    </button>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="gigs">
+        <div class="gigs__container">
+            <h2 class="font-XL">Gigs</h2>
+            <ul data-gigs-list="collapsed">
+                <li class="gigs__gig">
+                    <a href="#">
+                        <div class="gigs__gig__date font-M--light">
+                            11/03/2020
+                        </div>
+                        <div class="gigs__gig__location font-M">
+                            Utrecht ACU
+                        </div>
+                    </a>
+                </li>
+                <li class="gigs__gig">
+                    <a href="#">
+                        <div class="gigs__gig__date font-M--light">
+                            11/03/2020
+                        </div>
+                        <div class="gigs__gig__location font-M">
+                            Utrecht ACU
+                        </div>
+                    </a>
+                </li>
+                <li class="gigs__gig">
+                    <a href="#">
+                        <div class="gigs__gig__date font-M--light">
+                            11/03/2020
+                        </div>
+                        <div class="gigs__gig__location font-M">
+                            Utrecht ACU
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <button class="gigs__toggleButton button" data-toggle-gigs-shown>Show more...</button>
+        </div>
+    </section>
+    <section class="media">
+        <h2 class="font-XL">Media</h2>
+        <div class="media__container" data-slider>
+            <div class="media__video">
+                <iframe src="https://www.youtube.com/embed/PiusOvPLnvg?si=MkG-NcgZUKCrvG-r" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="media__video">
+                <iframe  src="https://www.youtube.com/embed/mm9Iqg8DW7s?si=aNxdYgnfL1EHwQGg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="media__video">
+                <iframe  src="https://www.youtube.com/embed/ET6zGvRzMrM?si=r7pyinUGS5Y06UHo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer__container">
+            <h2 class="font-L">Subscribe to the newsletter</h2>
+            <form action="" class="footer__form">
+                <input type="text" placeholder="Email here plz">
+                <button class="button button--white font-M">Subscribe</button>
+            </form>
+        </div>
+        <div class="footer__copyright">
+            <p class="font-XXS">© 2020 echoplay - All rights reserved</p>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>

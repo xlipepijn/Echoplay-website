@@ -1,0 +1,56 @@
+// Import main styles
+// @import "reset.scss";
+@import "colors.scss";
+@import "typography.scss";
+@import "grid.scss";
+@import "buttons.scss";
+
+// import everything in the sections folder
+@import "sections/nav.scss";
+@import "sections/homeHero.scss";
+@import "sections/about.scss";
+@import "sections/songs.scss";
+@import "sections/gigs.scss";
+@import "sections/media.scss";
+@import "sections/footer.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+h2 {
+    margin-bottom: 20px;
+
+    @include media($sm){
+        margin-bottom: 30px;
+    }
+}
+
+section {
+    padding: 50px 0px;
+    
+    @include media($sm){
+        padding: 80px 0px;
+    }
+}
+
+.flickity-page-dots {
+    display: none;
+}
+
+.flickity-prev-next-button {
+    &.previous {
+        left: 30px;
+    }
+    &.next {
+        right: 30px;
+    }
+}

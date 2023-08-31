@@ -1,0 +1,170 @@
+.navigation {
+    width: 100%;
+    background-color: $night;
+    @include grid-template;
+    padding: 25px 0px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 9999;
+    color: white;
+
+    &__inner {
+        grid-column: main;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__logoAndSocials {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        z-index: 9;
+    }
+
+    &__socialsContainer {
+        color: white;
+        display: none;
+        gap: 15px;
+
+        @include media($m){
+            display: flex;
+        }
+
+        &--mobile {
+            display: flex;
+
+            @include media($m){
+                display: none;
+            }
+        }
+
+        li {
+            list-style: none;
+        }
+
+        img {
+            width: 24px;
+            height: 24px;
+            filter: invert(100%) sepia(0%) saturate(1%) hue-rotate(239deg) brightness(103%) contrast(101%);
+        }
+    }
+
+    &__menuItems {
+        grid-column: main;
+        padding: 40px 0px;
+        gap: 30px;
+        display: flex;
+        margin: auto 0px;
+        flex-direction: column;
+        grid-row: 1/3;
+        align-items: center;
+
+
+        @include media($m){
+            flex-direction: row;
+            padding: 0px;
+        }
+
+        li {
+            list-style: none;
+            color: $white;
+            cursor: pointer;
+            text-align: center;
+            color: white;
+            @extend .font-S;
+
+            @include media($m, false){
+                font-size: clamp(3.3rem, 4.2vw, 3.9rem);
+                line-height: 1.15;
+                letter-spacing: 0.2px;
+                font-weight: 400;
+            }
+
+            @include media($m){
+                display: inline-block;
+                text-align: left;
+            }
+
+            a {
+                text-decoration: none;
+                transition: color 0.3s ease-out;
+                &:not(.button) {
+                    color: $white;
+                    &:hover {
+                        color: $silver;
+                    }
+                }
+
+
+                @include media($m, false){
+                    font-size: clamp(3.3rem, 4.2vw, 3.9rem);
+                    line-height: 1.15;
+                    letter-spacing: 0.2px;
+                    font-weight: 400;
+                }
+            }
+        } 
+    }
+
+    &__mobileToggle {
+        display: block;
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+        z-index: 9;
+        
+        svg {
+            display: none;
+            color: white;
+            width: 48px;
+            height: 48px;
+        }
+        [data-mobile-menu="open"] + & {
+            svg {
+                display: block;
+            }
+            span {
+                display: none;
+            }
+        }
+
+        span {
+            display: block;
+            width: 30px;
+            height: 3px;
+            border-radius: 9px;
+            background-color: $white;
+            margin-bottom: 5px;
+        }
+
+        @include media($m){
+            display: none;
+        }
+    }
+
+    &__mobileContainer {
+        @include grid-template;
+        display: grid;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100vh;
+        background-color: $night;
+        position: absolute;
+        opacity: 0;
+        transition: opacity 0.2s ease-out;
+        pointer-events: none;
+
+        &[data-mobile-menu="open"] {
+            pointer-events: all;
+            opacity: 1;
+        }
+
+
+        @include media($m){
+            display: contents;
+            pointer-events: all;
+        }
+    }
+}

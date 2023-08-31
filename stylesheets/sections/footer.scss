@@ -1,0 +1,46 @@
+.footer {
+    @include grid-template;
+    
+    @include media($m){
+        padding-bottom: 30px;
+    }
+    
+    h2 {
+        color: white;
+    }
+    
+    &__container {
+        grid-column: full;
+        padding: 35px;
+        background-color: $night;
+        
+        // @include media($m, false){
+        //     @include grid-template;
+        // }
+
+        @include media($m){
+            grid-column: main;
+        }
+    }
+
+    &__form {
+        display: grid;
+        grid-template-columns: auto auto;
+        width: 100%;
+        column-gap: 12px;
+        @include media($sm){
+            width: 820px;
+        }
+        input {
+            border: unset;
+            padding: 12px;
+            border-radius: 3px;
+        }
+    }
+
+    &__copyright {
+        grid-column: left;
+        margin-top: 20px;
+        
+    }
+}

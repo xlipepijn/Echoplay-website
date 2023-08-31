@@ -1,0 +1,20 @@
+.about {
+    @include grid-template;
+
+    &__title {
+        grid-column: main;
+
+        @include media($l){
+            grid-column: left;
+        }
+    }
+
+    &__content {
+        grid-column: main;
+        margin: 0px;
+        @include media($l){
+            grid-column: right;
+            margin-left: 20px;
+        }
+    }
+}

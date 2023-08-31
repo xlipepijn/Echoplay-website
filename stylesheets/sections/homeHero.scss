@@ -1,0 +1,106 @@
+.homeHero {
+    @include grid-template;
+    $navHeight: 68px;
+    margin-top: $navHeight;
+    height: 100vh;
+    min-height: 450px;
+    max-height: min(550px, 65vh);
+    width: 100%;
+    background-color: $smoke;
+    position: relative;
+    z-index: 0;
+    padding: 0px;
+    overflow: hidden;
+
+    &:after {
+        content: "";
+        width: 100%;
+        height: 300px;
+        position: absolute;
+        top: 0;
+        left: 0px;
+        background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
+    }
+
+    @include media($l){
+        &::after {
+            display: none;
+        }
+        &:before {
+            content: "";
+            width: 40px;
+            height: calc(100% + 10px);
+            background-color: $mist;
+            display: block;
+            position: absolute;
+            z-index: 9;
+            grid-column: 7;
+            transform: rotate(4deg) translateX(-23px);
+        }
+    }
+
+
+    &__textContent {
+        position: absolute;
+        grid-column: main;
+        top: 60px;
+        left: 0px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        z-index: 9;
+
+        @include media($l){
+            position: relative;
+            top: unset;
+            left: unset;
+            grid-column: 2/6;
+            color: $charcoal;
+        }
+
+        h1 {
+            // align-self: center;
+            font-weight: 700;
+            // make italic
+            font-style: italic;
+            span {
+                margin-top: 12px;
+                font-style: normal;
+                display: block;
+            }
+
+            @include media($l){
+                // align-self: left;
+            }
+        }
+
+        a {
+            margin-top: 25px;
+        }
+    }
+
+    &__rightSide {
+        grid-column: full;
+        grid-row: 1/3;
+        @include media($l) {
+            grid-column: 7/-1;
+            grid-row: auto;
+        }
+    }
+
+    &__imageContainer {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        img {
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            filter: grayscale(60%);
+        }
+    }
+}

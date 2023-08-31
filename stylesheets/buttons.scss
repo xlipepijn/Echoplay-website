@@ -1,0 +1,41 @@
+.button {
+    text-decoration: none;
+    border: none;
+    color: white;
+    background-color: $night;
+    display: flex;
+    border-radius: 3px;
+    width: fit-content;
+    height: fit-content;
+    padding: 9px 18px;
+    transition: background-color 0.2s ease-out;
+    font-weight: 600;
+    cursor: pointer;
+
+
+    &:hover, 
+    a:hover > & {
+        background-color: $slate;
+    }
+
+    &--withIcon {
+        svg {
+            margin-right: 10px;
+            width: 12px;
+            height: 12px;
+        }
+    }
+
+    &--white {
+        background-color: white;
+        color: $charcoal;
+        &:hover {
+            color: $charcoal;
+            background-color: $silver;
+        }
+    }
+
+    &--primary {
+        font-weight: 700;
+    }
+}

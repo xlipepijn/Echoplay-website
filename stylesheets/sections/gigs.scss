@@ -1,0 +1,45 @@
+.gigs {
+    @include grid-template;
+    background-color: $mist;
+
+
+    &__container {
+        grid-column: main;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    ul {
+        width: 100%;
+
+        @include media($sm){
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 20px;
+        }
+        li {
+        }
+    }
+    
+    &__gig {
+        list-style: none;
+        border-bottom: 1px solid $slate;
+        padding: 10px 0px;
+        
+        a {
+            display: flex;
+            gap: 20px;
+            
+        }
+
+        &__date:after  {
+            content: "->";
+        }
+    }
+
+    button {
+        margin-top: 25px;
+    }
+}

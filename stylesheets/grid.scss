@@ -1,0 +1,114 @@
+$s: 480px;
+$sm: 768px;
+$m: 992px;
+$l: 1280px;
+$xl: 1440px;
+
+// add backwards compatibility
+$small: $s;
+$smallmedium: $sm;
+$medium: $m;
+$large: $l;
+$xlarge: $xl;
+
+$maxWidth: 1485px;
+
+
+@mixin media($size, $up: true) {
+	@if $up {
+		@media (min-width: $size) {
+			@content;
+		}
+	} @else {
+		@media (max-width: ($size - 1)) {
+			@content;
+		}
+	}
+}
+
+:root {
+	--column-gap: 15px;
+	--row-gap: 0px;
+	--menu-height: 104px;
+}
+
+$grid-gap: var(--row-gap) var(--column-gap);
+
+@mixin grid-template {
+	display: grid;
+	gap: $grid-gap;
+	grid-template-columns:
+		[full-start] minmax(1.3vw, 1fr)
+		[main-start] repeat(4, minmax(0, 100px)) [main-end]
+		minmax(1.3vw, 1fr) [full-end];
+		grid-template-rows: auto;
+		grid-template-areas: 
+		". left left left left ."
+		". right right right right .";
+
+	@include media($s){
+		grid-template-columns:
+		[full-start] minmax(1.3vw, 1fr)
+		[main-start] repeat(6, minmax(0, 100px)) [main-end]
+		minmax(1.3vw, 1fr) [full-end];
+		grid-template-areas: 
+		". left left left left left left ."
+		". right right right right right right .";
+	}
+	@include media($sm){
+		grid-template-columns:
+		[full-start] minmax(1.3vw, 1fr)
+		[main-start] repeat(12, minmax(0, 100px)) [main-end]
+		minmax(1.3vw, 1fr) [full-end];
+		grid-template-areas: 
+		". left left left left left left right right right right right right .";
+	}
+	@include media($l){
+		grid-template-columns:
+		[full-start] minmax(4vw, 1fr)
+		[main-start] repeat(20, minmax(0, 60px)) [main-end]
+		minmax(4vw, 1fr) [full-end];
+		grid-template-areas:
+		". left left left left left left left left left left right right right right right right right right right right .";
+	}
+}
+
+[data-grid="grid-template"]{
+	@include grid-template;
+}
+
+[data-column="full"]{
+	grid-column: full;
+}
+
+[data-column="main"]{
+	grid-column: main;
+}
+
+[data-column="left"]{
+	grid-column: left;
+}
+
+[data-column="right"]{
+	grid-column: right;
+}
+
+[data-column="span-4"]{
+	grid-column: main;
+	@include media($sm){
+		grid-column: span 4;
+		&:nth-of-type(3n-2){
+			grid-column-start: 2;
+			grid-column-end: span 4;
+		}
+	}
+	@include media($l){
+		&:nth-of-type(3n-2){
+			grid-column-start: auto;
+		}
+		&:nth-of-type(5n-4){
+			grid-column-start: 2;
+			grid-column-end: span 4;
+		}
+	}
+}
