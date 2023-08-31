@@ -1,4 +1,5 @@
 .button {
+    position: relative;
     text-decoration: none;
     border: none;
     color: white;
@@ -7,10 +8,12 @@
     border-radius: 3px;
     width: fit-content;
     height: fit-content;
-    padding: 9px 18px;
+    padding: 9px 18px 7px 18px;
     transition: background-color 0.2s ease-out;
     font-weight: 600;
     cursor: pointer;
+    @extend .font-M;
+    overflow: hidden;
 
 
     &:hover, 
@@ -37,5 +40,35 @@
 
     &--primary {
         font-weight: 700;
+    }
+
+    &--small {
+        @extend .font-S;
+    }
+
+    &--gradient {
+        background-color: white ;
+        background: transparent ;
+        &:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            background-image: linear-gradient(to right, #fc5c7d, #6a82fb);
+            transition: opacity 0.2s ease-out;
+            z-index: -1;
+        }
+
+        &:hover,
+        a:hover > & {
+            &:before {
+                opacity: 0;
+            }
+            background-color: unset;
+            color: $dark;
+            outline: 2px solid $night;
+        }
     }
 }

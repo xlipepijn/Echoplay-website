@@ -88,8 +88,8 @@
 
             a {
                 text-decoration: none;
-                transition: color 0.3s ease-out;
                 &:not(.button) {
+                    transition: color 0.3s ease-out;
                     color: $white;
                     &:hover {
                         color: $silver;

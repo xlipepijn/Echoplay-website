@@ -12,6 +12,10 @@
     padding: 0px;
     overflow: hidden;
 
+    @include media($s, false) {
+        aspect-ratio: 4/3;
+    }
+
     &:after {
         content: "";
         width: 100%;
@@ -60,18 +64,19 @@
         }
 
         h1 {
-            // align-self: center;
             font-weight: 700;
-            // make italic
             font-style: italic;
+
+            @include media($l) {
+                color: $night;
+            }
             span {
                 margin-top: 12px;
                 font-style: normal;
                 display: block;
-            }
-
-            @include media($l){
-                // align-self: left;
+                @include media($l) {
+                    color: $dark;
+                }
             }
         }
 
