@@ -14,7 +14,11 @@
     cursor: pointer;
     @extend .font-M;
     overflow: hidden;
+    $this:&;
 
+    span {
+        z-index: 9;
+    }
 
     &:hover, 
     a:hover > & {
@@ -58,7 +62,7 @@
             left: 0px;
             background-image: linear-gradient(to right, #fc5c7d, #6a82fb);
             transition: opacity 0.2s ease-out;
-            z-index: -1;
+            z-index: 0;
         }
 
         &:hover,
@@ -69,6 +73,12 @@
             background-color: unset;
             color: $dark;
             outline: 2px solid $night;
+
         }
+    }
+
+    &--darkBg:hover {
+        color: white;
+        outline: 2px solid white;
     }
 }

@@ -41,22 +41,26 @@
                 <div class="navigation__mobileContainer" data-mobile-menu="closed"> 
                     <ul class="navigation__menuItems" data-is-open-on-mobile="false">
                         <li>
-                            <a class="font-M" href="#">About</a>
+                            <a class="font-M" href="#about">About</a>
                         </li>
                         <li>
-                            <a class="font-M" href="#">Music</a>
+                            <a class="font-M" href="#songs">Music</a>
                         </li>
                         <li>
-                            <a class="font-M" href="#">Gigs</a>
+                            <a class="font-M" href="#gigs">Gigs</a>
                         </li>
                         <li>
-                            <a class="font-M" href="#">Media</a>
+                            <a class="font-M" href="#media">Media</a>
                         </li>
                         <li>
-                            <a class="font-M" href="#">Newsletter</a>
+                            <a class="font-M" href="#newsletter">Newsletter</a>
                         </li>
                         <li>
-                            <a class="font-M button button--gradient" href="#">Listen</a>
+                            <a class="font-M button button--gradient button--darkBg" href="#">
+                                <span>
+                                    Listen
+                                </span>
+                            </a>
                         </li>
                         <li>
                             <ul class="navigation__socialsContainer navigation__socialsContainer--mobile">
@@ -99,8 +103,10 @@
         <div class="homeHero__textContent">
             <h1 class="font-3XL">Change<span class="font-M">Out now on all streaming services</span></h1>
 
-            <a href="#" class="button button--gradient font-M">
-                Listen now
+            <a href="#" class="button button--gradient">
+                <span>
+                    Listen now
+                </span>
             </a>
         </div>
         <div class="homeHero__rightSide">
@@ -110,6 +116,7 @@
         </div>
     </section>
     <section class="about">
+        <div id="about" class="idAnchor"></div>
         <div class="about__title">
             <h2 class="font-XL">About Us</h2>
         </div>
@@ -123,6 +130,7 @@
         </div>
     </section>
     <section class="songs">
+        <div id="songs" class="idAnchor"></div>
         <div class="songs__container">
             <h2 class="font-XL">Music</h2>
             <div class="songs__songsContainer">
@@ -134,7 +142,9 @@
                         <h3 class="font-L--bold italic">Song Title</h3>
                     </div>
                     <button class="button button--gradient">
-                        Listen
+                        <span>
+                            Listen
+                        </span>
                     </button>
                 </a>
                 <a href="#" class="songs__card">
@@ -145,13 +155,16 @@
                         <h3 class="font-L--bold italic">Song Title</h3>
                     </div>
                     <button class="button button--gradient">
-                        Listen
+                        <span>
+                            Listen
+                        </span>
                     </button>
                 </a>
             </div>
         </div>
     </section>
     <section class="gigs">
+        <div id="gigs" class="idAnchor"></div>
         <div class="gigs__container">
             <h2 class="font-XL">Gigs</h2>
             <ul data-gigs-list="collapsed">
@@ -190,6 +203,7 @@
         </div>
     </section>
     <section class="media">
+        <div id="media" class="idAnchor"></div>
         <h2 class="font-XL">Media</h2>
         <div class="media__container" data-slider>
             <div class="media__video">
@@ -203,12 +217,17 @@
             </div>
         </div>
     </section>
-    <footer class="footer">
+    <footer  id="newsletter" class="footer">
+        <div id="newsletter" class="idAnchor"></div>
         <div class="footer__container">
             <h2 class="font-L">Subscribe to the newsletter</h2>
             <form action="" class="footer__form">
                 <input type="text" placeholder="Email here plz">
-                <button class="button button--white font-M">Subscribe</button>
+                <button class="button button--white font-M">
+                    <span>
+                        Subscribe
+                    </span>
+                </button>
             </form>
         </div>
         <div class="footer__copyright">

@@ -207,6 +207,9 @@ em, i {
   cursor: pointer;
   overflow: hidden;
 }
+.button span {
+  z-index: 9;
+}
 .button:hover, a:hover > .button {
   background-color: rgb(86, 86, 89);
 }
@@ -239,7 +242,7 @@ em, i {
   left: 0px;
   background-image: linear-gradient(to right, #fc5c7d, #6a82fb);
   transition: opacity 0.2s ease-out;
-  z-index: -1;
+  z-index: 0;
 }
 .button--gradient:hover, a:hover > .button--gradient {
   background-color: unset;
@@ -248,6 +251,10 @@ em, i {
 }
 .button--gradient:hover:before, a:hover > .button--gradient:before {
   opacity: 0;
+}
+.button--darkBg:hover {
+  color: white;
+  outline: 2px solid white;
 }
 
 .navigation {
@@ -706,7 +713,6 @@ em, i {
   gap: 20px;
 }
 .songs__card__image {
-  background-color: red;
   aspect-ratio: 1/1;
   width: 100%;
 }
@@ -927,6 +933,10 @@ section {
 }
 .flickity-prev-next-button.next {
   right: 30px;
+}
+
+.idAnchor {
+  transform: translateY(-150px);
 }
 
 /*# sourceMappingURL=index.css.map */

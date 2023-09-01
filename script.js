@@ -1,6 +1,6 @@
 const mobileToggle = document.querySelector('[data-mobile-toggle]');
 const mobileMenu = document.querySelector('[data-mobile-menu]');
-
+const allLinks = [...document.querySelectorAll('a')];
 function toggleMobileMenu() {
     if(mobileMenu.dataset.mobileMenu == 'closed') {
         mobileMenu.dataset.mobileMenu = 'open';
@@ -17,3 +17,9 @@ var flkty = new Flickity( '[data-slider]', {
 
 
 mobileToggle?.addEventListener('click', toggleMobileMenu);
+allLinks.forEach((link) => {
+    console.log(link);
+    link.addEventListener('click',() => {
+        mobileMenu.dataset.mobileMenu = "closed";
+    })
+})
