@@ -111,7 +111,7 @@
         </div>
         <div class="homeHero__rightSide">
             <div class="homeHero__imageContainer">
-                <img src="./images/home-hero.png" alt="">
+                <img src="./images/home-hero-compressed.png" alt="">
             </div>
         </div>
     </section>
@@ -147,19 +147,19 @@
                         </span>
                     </button>
                 </a>
-                <a href="#" class="songs__card">
+                <div class="songs__card">
                     <div class="songs__card__image">
                         <img src="./images/albumart.jpg" alt="">
                     </div>
                     <div class="songs__card__content">
                         <h3 class="font-L--bold italic">Song Title</h3>
                     </div>
-                    <button class="button button--gradient">
+                    <button data-open-modal="1" class="button button--gradient">
                         <span>
                             Listen
                         </span>
                     </button>
-                </a>
+                </div>
             </div>
         </div>
     </section>
@@ -207,13 +207,13 @@
         <h2 class="font-XL">Media</h2>
         <div class="media__container" data-slider>
             <div class="media__video">
-                <iframe src="https://www.youtube.com/embed/PiusOvPLnvg?si=MkG-NcgZUKCrvG-r" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/PiusOvPLnvg?si=MkG-NcgZUKCrvG-r" frameborder="0"  allowfullscreen></iframe>
             </div>
             <div class="media__video">
-                <iframe  src="https://www.youtube.com/embed/mm9Iqg8DW7s?si=aNxdYgnfL1EHwQGg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe  src="https://www.youtube.com/embed/mm9Iqg8DW7s?si=aNxdYgnfL1EHwQGg" frameborder="0" allowfullscreen></iframe>
             </div>
             <div class="media__video">
-                <iframe  src="https://www.youtube.com/embed/ET6zGvRzMrM?si=r7pyinUGS5Y06UHo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe  src="https://www.youtube.com/embed/ET6zGvRzMrM?si=r7pyinUGS5Y06UHo" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
     </section>
@@ -234,6 +234,22 @@
             <p class="font-XXS">© 2020 echoplay - All rights reserved</p>
         </div>
     </footer>
+    <dialog class="songModal" data-modal="1">
+        <button class="songModal__closeModal" data-close-modal>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="navigation__mobileToggle__close">
+                            <path fill="currentColor" d="M12 10.586L7.707 6.293a1 1 0 00-1.414 1.414L10.586 12l-4.293 4.293a1 1 0 101.414 1.414L12 13.414l4.293 4.293a1 1 0 001.414-1.414L13.414 12l4.293-4.293a1 1 0 00-1.414-1.414L12 10.586z"/>
+            </svg>
+        </button>
+        <div class="songModal__buttonsContainer">
+            <h2 class="font-XL">Change</h2>
+            <a class="button">Spotify</a>
+            <a class="button">Bandcamp</a>
+            <a class="button">Apple Music</a>
+        </div>
+        <form>
+            <button value="cancel" formmethod="dialog">Cancel</button>
+        </form>
+    </dialog>
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <script src="./script.js"></script>
 </body>
