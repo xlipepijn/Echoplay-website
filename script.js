@@ -9,7 +9,6 @@ function closeModal(currentModal) {
     console.log(currentModal)
     currentModal.close()
     bodySection.dataset.modalState = "closed";
-
 }
 
 function openModal(triggeredModalId) {
@@ -21,11 +20,11 @@ function openModal(triggeredModalId) {
     triggeredModal.show();
 }
 
-allModalButtons.forEach((modalButton) =>{
+allModalButtons?.forEach((modalButton) =>{
     modalButton.addEventListener('click',(e) => openModal(e.currentTarget.dataset.openModal))
 })
 
-allModals.forEach((modal) => {
+allModals?.forEach((modal) => {
     let currentCloseBtn = modal.querySelector('[data-close-modal]')
     if(!currentCloseBtn) return console.log("no close btn found :(" , {modal})
     currentCloseBtn.addEventListener("click", () => closeModal(modal));
