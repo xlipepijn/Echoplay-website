@@ -29,17 +29,45 @@
         padding: 10px 0px;
         
         a {
-            display: flex;
+            display: grid;
+            grid-template-columns: 100px 1fr;
             gap: 20px;
             
+            @include media($sm){
+                display: flex;
+            }
         }
 
-        &__date:after  {
-            content: "->";
+        
+        &__date {
+            width: 100px;
+            @include media($sm){
+                width: auto;
+                &:after  {
+                    content: "->";
+                }
+            }
+        }
+
+        &__location {
+            transition: 0.2s transform ease-out;
+            transform: translateX(0px);
+            a:hover & {
+                transform: translateX(10px);
+            }
         }
     }
 
     button {
         margin-top: 25px;
+    }
+
+    &__pastShowsContainer {
+        margin-top: 30px;
+    }
+
+    [data-toggle-gigs-shown-hide],
+    [data-past-gigs] {
+        display: none;
     }
 }

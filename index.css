@@ -787,14 +787,42 @@ em, i {
   padding: 10px 0px;
 }
 .gigs__gig a {
-  display: flex;
+  display: grid;
+  grid-template-columns: 100px 1fr;
   gap: 20px;
 }
-.gigs__gig__date:after {
-  content: "->";
+@media (min-width: 768px) {
+  .gigs__gig a {
+    display: flex;
+  }
+}
+.gigs__gig__date {
+  width: 100px;
+}
+@media (min-width: 768px) {
+  .gigs__gig__date {
+    width: auto;
+  }
+  .gigs__gig__date:after {
+    content: "->";
+  }
+}
+.gigs__gig__location {
+  transition: 0.2s transform ease-out;
+  transform: translateX(0px);
+}
+a:hover .gigs__gig__location {
+  transform: translateX(10px);
 }
 .gigs button {
   margin-top: 25px;
+}
+.gigs__pastShowsContainer {
+  margin-top: 30px;
+}
+.gigs [data-toggle-gigs-shown-hide],
+.gigs [data-past-gigs] {
+  display: none;
 }
 
 .media {

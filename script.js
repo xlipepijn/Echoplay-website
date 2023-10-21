@@ -4,6 +4,11 @@ const allLinks = [...document.querySelectorAll('a')];
 const allModalButtons = [...document.querySelectorAll('button[data-open-modal]')]
 const allModals = [...document.querySelectorAll('[data-modal]')]
 const bodySection = document.querySelector('body')
+const showPastGigsButton = document.querySelector("[data-toggle-gigs-shown]");
+const hidePastGigsButton = document.querySelector(
+  "[data-toggle-gigs-shown-hide]"
+);
+const pastGigsContainer = document.querySelector("[data-past-gigs]")
 
 function closeModal(currentModal) {
     console.log(currentModal)
@@ -52,3 +57,18 @@ allLinks.forEach((link) => {
         mobileMenu.dataset.mobileMenu = "closed";
     })
 })
+
+function hidePastGigs() {
+    pastGigsContainer.style.display = 'none';
+    hidePastGigsButton.style.display = 'none';
+    showPastGigsButton.style.display = 'flex';
+}
+
+function showPastGigs() {
+  pastGigsContainer.style.display = "block";
+  hidePastGigsButton.style.display = "flex";
+  showPastGigsButton.style.display = "none";
+}
+
+showPastGigsButton.addEventListener('click', showPastGigs)
+hidePastGigsButton.addEventListener("click", hidePastGigs);
