@@ -3,8 +3,19 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="theme-color" content="#000000">
+		<meta name="description" content="Echoplay is a mix of post-punk and alternative rock, characterized by melodic riffs, introspective lyrics and dynamic transitions.">
+		<meta name="author" content="Echoplay">
+		<meta property="og:image" content="/images/logo512.png">
+		<meta property="og:image:type" content="image/png">
+		<meta property="og:image:width" content="512">
+		<meta property="og:image:height" content="512">
 		<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 		<link rel="stylesheet" href="./index.css">
+		<link rel="icon" type="image/png" sizes="64x64" href="images/favicon.png">
+		<link rel="canonical" href="http://echoplay.nl/">
+		<link rel="alternate" href="http://echoplay.nl/" hreflang="en" />
+		<link rel="manifest" href="manifest.json">
 		<title>Echoplay © <?php echo date("Y"); ?></title>
 	</head>
 	<body>
