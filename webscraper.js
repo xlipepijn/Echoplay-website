@@ -22,6 +22,11 @@ export default async function getQuotes()  {
     waitUntil: "networkidle0",
   });
 
+  await page.setViewport({
+    width: 1200,
+    height: 3000,
+  });
+
   // Get page data
   const events = await page.evaluate(() => {
     let arr = [];
