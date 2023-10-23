@@ -27,12 +27,16 @@ export default async function getQuotes()  {
     height: 3000,
   });
 
+
+  await page.waitForSelector("#onetrust-accept-btn-handler");
+  await page.click("#onetrust-accept-btn-handler");
+
   // Get page data
   const events = await page.evaluate(() => {
     let arr = [];
     // Fetch the first element with class "quote"
     const eventsContainer = document.querySelector(".local-upcoming-events-list");
-    const events = eventsContainer.querySelectorAll(".event-listing");
+    const events = document.querySelectorAll(".event-listing");
 
     // event-listing
     // Fetch the sub-elements from the previously fetched quote element
