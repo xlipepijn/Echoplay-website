@@ -18,9 +18,12 @@ export default async function getQuotes()  {
   // On this new page:
   // - open the "http://quotes.toscrape.com/" website
   // - wait until the dom content is loaded (HTML is ready)
-  await page.goto("https://www.songkick.com/artists/10303196-echoplay-nl", {
-    waitUntil: "networkidle0",
-  });
+  await page.goto(
+    "https://www.songkick.com/artists/10303196-echoplay-nl/calendar",
+    {
+      waitUntil: "networkidle0",
+    }
+  );
 
   await page.setViewport({
     width: 1200,
@@ -35,8 +38,8 @@ export default async function getQuotes()  {
   const events = await page.evaluate(() => {
     let arr = [];
     // Fetch the first element with class "quote"
-    const eventsContainer = document.querySelector(".local-upcoming-events-list");
-    const events = document.querySelectorAll(".event-listing");
+    const eventsContainer = document.querySelector(".tour-calendar-summary");
+    const events = eventsContainer.querySelectorAll(".event-listing");
 
     // event-listing
     // Fetch the sub-elements from the previously fetched quote element
@@ -45,7 +48,8 @@ export default async function getQuotes()  {
       let time = el.querySelector("time").dateTime;
       let place = el.querySelector(".primary-detail").innerText;
       let venue = el.querySelector(".secondary-detail").innerText;
-      arr.push({ time, place, venue });
+      let url = el.querySelector("a").href;
+      arr.push({ time, place, venue, url });
     });
 
     return arr;
