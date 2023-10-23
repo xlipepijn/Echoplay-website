@@ -1,3 +1,5 @@
+import getDates from './webscraper'
+
 const mobileToggle = document.querySelector('[data-mobile-toggle]');
 const mobileMenu = document.querySelector('[data-mobile-menu]');
 const allLinks = [...document.querySelectorAll('a')];
