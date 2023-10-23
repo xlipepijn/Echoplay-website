@@ -13,11 +13,13 @@ export default async function getQuotes()  {
   // Open a new page
   const page = await browser.newPage();
 
+//   await page.waitFor(2000);
+
   // On this new page:
   // - open the "http://quotes.toscrape.com/" website
   // - wait until the dom content is loaded (HTML is ready)
   await page.goto("https://www.songkick.com/artists/10303196-echoplay-nl", {
-    waitUntil: "domcontentloaded",
+    waitUntil: "networkidle0",
   });
 
   // Get page data
